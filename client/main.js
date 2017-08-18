@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './componets/app.jsx';
 
-ReactDOM.render( 
-	<h1> Notes </h1>,
+ReactDOM.render( <
+    App / > ,
     document.getElementById('mount-point')
 );

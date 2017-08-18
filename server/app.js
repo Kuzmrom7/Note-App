@@ -2,12 +2,14 @@ import express from 'express'; //import ES6
 import bodyParser from 'body-parser';
 import * as db from './utils/DBUtils.js';
 import { serverPort } from '../etc/config.json';
+import cors from 'cors';
 
 db.setUpConnection();
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors({ origin: '*' }));
 
 app.get('/note', (req, res) => {
     db.listNotes().then(data => res.send(data));
