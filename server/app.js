@@ -1,6 +1,7 @@
 import express from 'express'; //import ES6
 import bodyParser from 'body-parser';
 import * as db from './utils/DBUtils.js';
+import { serverPort } from '../etc/config.json';
 
 db.setUpConnection();
 
@@ -21,6 +22,6 @@ app.delete('/note/:id', (req, res) => {
 });
 
 //up and run server
-const server = app.listen(8080, (req, res) => {
-    console.log("Server up and run on the port 8080");
+const server = app.listen(serverPort, () => {
+    console.log(`Server up and run on the port ${ serverPort}`);
 });
